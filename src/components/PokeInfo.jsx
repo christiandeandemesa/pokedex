@@ -1,8 +1,12 @@
 function PokeInfo(props) {
-    const {id, name, sprite, type1, type2, height, weight, hp, hpStat, atk, atkStat, def, defStat, spAtk, spAtkStat, spDef, spDefStat, spd, spdStat, ability1, ability2, move1, move2, move3, move4} = props;
+
+    // Destructures the keys in props, so I can use id instead of props.id.
+    const {id, name, sprite, type1, type2, height, weight, hp, hpStat, atk, atkStat, def, defStat, spAtk, spAtkStat, spDef, spDefStat, spd, spdStat, ability1, ability2, 
+           move1, move2, move3, move4} = props;
 
     return (
         <div>
+            {/* Example of using the destructured props. */}
             <h1>Id: {id}</h1>
             <h1>Name: {name}</h1>
             <img src={sprite} alt='Pokemon'/>
@@ -17,7 +21,8 @@ function PokeInfo(props) {
             <h1>{spDef} {spDefStat}</h1>
             <h1>{spd} {spdStat}</h1>
             <h1>Ability 1: {ability1}</h1>
-            <h1>{ability2 === '' ? '' : `Ability 1: ${ability1}`}</h1>
+            {/* If ability2 is an empty string, show an empty string. If it is not an empty string, show the value of ability2. */}
+            <h1>{ability2 === '' ? '' : `Ability 2: ${ability2}`}</h1>
             <h1>Move 1: {move1}</h1>
             <h1>Move 2: {move2}</h1>
             <h1>Move 3: {move3}</h1>
