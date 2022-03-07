@@ -34,9 +34,13 @@ function App() {
       // Sets the pokeData state to be pokeDataArr.
       setPokeData(pokeDataArr);
     }
-    // If the GET request fails (e.g. words that are not pokemon), logs the error in the console.
     catch (err) {
+      // If the GET request fails (e.g. words that are not pokemon), logs the error in the console.
       console.log(err);
+      // Sets the pokeName state to an empty string to reset the input field.
+      setPokeName('');
+      // Creates an alert with the below message.
+      alert('Pokemon species yet to be found!')
     }
   }
 
@@ -44,8 +48,13 @@ function App() {
   function handleSubmit(e) {
     // Stops the component from re-rendering and refreshing the page.
     e.preventDefault();
-    // Runs the getPokemon function.
-    getPokemon();
+    /*
+    If the the pokeName's state does not have any whitespaces (\S is the opposite of \s which matches whitespaces), then run the getPokemon function.
+    Added this because submitting the form with an empty string or a string with only whitespace, caused the form to disappear.
+    */
+    if(/\S/.test(pokeName)) getPokemon();
+    // If the pokeName's state has at least one whitespace, set the pokeName's state to an empty string to reset the input field.
+    else setPokeName('');
   }
 
   // Creates a variable (pokemonElement) that maps over every object (pokemon) in the pokeData state's array.
@@ -66,18 +75,12 @@ function App() {
         type2={pokemon.types[1] ? pokemon.types[1].type.name : ''}
         height={pokemon.height}
         weight={pokemon.weight}
-        hp={pokemon.stats[0].stat.name}
-        hpStat={pokemon.stats[0].base_stat}
-        atk={pokemon.stats[1].stat.name}
-        atkStat={pokemon.stats[1].base_stat}
-        def={pokemon.stats[2].stat.name}
-        defStat={pokemon.stats[2].base_stat}
-        spAtk={pokemon.stats[3].stat.name}
-        spAtkStat={pokemon.stats[3].base_stat}
-        spDef={pokemon.stats[4].stat.name}
-        spDefStat={pokemon.stats[4].base_stat}
-        spd={pokemon.stats[5].stat.name}
-        spdStat={pokemon.stats[5].base_stat}
+        hp={pokemon.stats[0].base_stat}
+        atk={pokemon.stats[1].base_stat}
+        def={pokemon.stats[2].base_stat}
+        spAtk={pokemon.stats[3].base_stat}
+        spDef={pokemon.stats[4].base_stat}
+        spd={pokemon.stats[5].base_stat}
         ability1={pokemon.abilities[0].ability.name}
         ability2={pokemon.abilities[1].ability.name}
         move1={pokemon.moves[0].move.name}
