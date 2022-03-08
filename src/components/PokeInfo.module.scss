@@ -1,0 +1,113 @@
+$cerulean: #2ba4ed;
+$dark-cerulean: #1c5fad;
+
+// Pokemon information.
+#info {
+    width: 90%;
+    background: $cerulean;
+    color: $dark-cerulean;
+    font-weight: bold;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // Pokemon image and basic information.
+    #top_info {
+        height: 35%;
+        width: 95%;
+        margin-top: 3%;
+        display: flex;
+
+        // Pokemon image container.
+        #img {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            // Pokemon image.
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        // Basic information container.
+        #right_info {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            // Each of the rows that hold information (e.g. No.).
+            .small_section {
+                border-bottom: 0.25rem solid white;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // Pokemon stats and moveset.
+    #bot_info {
+        height: 65%;
+        width: 95%;
+        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+
+        // Each of the rows that hold the stats.
+        .large_section {
+            border-bottom: 0.25rem solid white;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        // Moveset container.
+        #moves {
+            width: 100%;
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            // Move title.
+            #move_title {
+                font-size: 1.2rem;
+                margin-bottom: 1%;
+            }
+
+            // Sample move container.
+            #move_container {
+                width: 80%;
+
+                // Top and bottom sample move containers.
+                #top_move_container, #bot_move_container {
+                    margin-bottom: 2%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    gap: 2%;
+
+                    // Individual move.
+                    p {
+                        width: 50%;
+                        border: 2px solid black;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        transition: 0.7s ease;
+                    }
+
+                    // Individual move hover effect.
+                    p:hover {
+                        background: $dark-cerulean;
+                        color: $cerulean;
+                        border: 2px solid white;
+                        transition: 0.4s ease;
+                    }
+                }
+            }
+        }
+    }
+}

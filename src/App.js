@@ -52,7 +52,7 @@ function App() {
     If the the pokeName's state does not have any whitespaces (\S is the opposite of \s which matches whitespaces), then run the getPokemon function.
     Added this because submitting the form with an empty string or a string with only whitespace, caused the form to disappear.
     */
-    if(/\S/.test(pokeName)) getPokemon();
+    if (/\S/.test(pokeName)) getPokemon();
     // If the pokeName's state has at least one whitespace, set the pokeName's state to an empty string to reset the input field.
     else setPokeName('');
   }
@@ -65,9 +65,10 @@ function App() {
         // If you use a reusable component like this, they must have unique keys.
         key={pokemon.id}
         id={pokemon.id}
-        name={pokemon.name}
+        // Capitalizes the first letter of the name (e.g. water becomes Water).
+        name={pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
         sprite={pokemon.sprites.front_default}
-        type1={pokemon.types[0].type.name}
+        type1={pokemon.types[0].type.name.charAt(0).toUpperCase() + pokemon.types[0].type.name.slice(1)}
         /*
         If pokemon.types[1] exists in the API data, pass its data. If it does not exist, pass an empty string.
         Added this because some pokemon only have one ability, and it will break the PokeInfo component.
@@ -81,40 +82,79 @@ function App() {
         spAtk={pokemon.stats[3].base_stat}
         spDef={pokemon.stats[4].base_stat}
         spd={pokemon.stats[5].base_stat}
-        ability1={pokemon.abilities[0].ability.name}
-        ability2={pokemon.abilities[1].ability.name}
-        move1={pokemon.moves[0].move.name}
-        move2={pokemon.moves[1].move.name}
-        move3={pokemon.moves[2].move.name}
-        move4={pokemon.moves[3].move.name}
+        // Converts some of the abilities' and moves' names to remove the hyphen and capitalize the words (e.g. hydro-pump becomes Hydro Pump).
+        ability1={pokemon.abilities[0].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        ability2={pokemon.abilities[1].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        move1={pokemon.moves[0].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        move2={pokemon.moves[1].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        move3={pokemon.moves[2].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        move4={pokemon.moves[3].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
       />
     )
   });
 
   return (
     <div className="App">
-      {/* Runs the handleSubmit function when the button inside the form is clicked. */}
-      <form onSubmit={handleSubmit}>
-        <input
-          // Defines the input as a single-line text field.
-          type='text'
-          // Only form elements with a name will have their value passed when the form is submitted.
-          name='pokeName'
-          // What will appear in the input if it is empty.
-          placeholder='Pokemon Name'
-          // Value is the pokeName state.
-          value={pokeName}
-          /*
-          When the types or deletes a character, it sets the pokeName to be whatever is in the input.
-          e is the event (typing or deleting), e.target is the target of the event (<input>), e.target.value is the value in the input tag, and we set it to lowercase 
-          because the API call only works if the pokemon's name is all lowercase letters.
-          */
-          onChange={e => setPokeName(e.target.value.toLowerCase())}
-        />
-        <button>Search for Pokemon</button>
-      </form>
-      {/* This renders the above pokeElement variable which itself returns the PokeInfo component. */}
-      {pokeElement}
+
+      {/* This is the whole pokedex. */}
+      <div id='pokedex'>
+
+        {/* This is the top red cover. */}
+        <div id='top-cover'>
+          <div id='left-top'>
+            <div id='top-left-outer-border'>
+              <div id='top-left-inner-border'></div>
+            </div>
+          </div>
+          <div id='mid-top'>
+            <div id='top-half-circle-border'>
+              <div id='top-half-circle'></div>
+            </div>
+          </div>
+          <div id='right-top'></div>
+        </div>
+
+        {/* This is the blue screen. */}
+        <div id='screen'>
+          {/* Runs the handleSubmit function when the button inside the form is clicked. */}
+          <form onSubmit={handleSubmit}>
+            <input
+              // Defines the input as a single-line text field.
+              type='text'
+              // Only form elements with a name will have their value passed when the form is submitted.
+              name='pokeName'
+              // What will appear in the input if it is empty.
+              placeholder='Pokemon Name'
+              // Value is the pokeName state.
+              value={pokeName}
+              /*
+              When the types or deletes a character, it sets the pokeName to be whatever is in the input.
+              e is the event (typing or deleting), e.target is the target of the event (<input>), e.target.value is the value in the input tag, and we set it to lowercase 
+              because the API call only works if the pokemon's name is all lowercase letters.
+              */
+              onChange={e => setPokeName(e.target.value.toLowerCase())}
+            />
+            <button>Search</button>
+          </form>
+          {/* This renders the above pokeElement variable which itself returns the PokeInfo component. */}
+          {pokeElement}
+        </div>
+
+        {/* This is the bottom red cover. */}
+        <div id='bot-cover'>
+          <div id='left-bot'>
+            <div id='bot-left-outer-border'>
+              <div id='bot-left-inner-border'></div>
+            </div>
+          </div>
+          <div id='mid-bot'>
+            <div id='bot-half-circle-border'>
+              <div id='bot-half-circle'></div>
+            </div>
+          </div>
+          <div id='right-bot'></div>
+        </div>
+      </div>
     </div>
   );
 }
