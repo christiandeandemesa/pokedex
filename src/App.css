@@ -1,4 +1,257 @@
 .App {
+  height: 100vh;
+  width: 100vw;
   background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #pokedex {
+  height: 90%;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App #pokedex #top-cover {
+  height: 28%;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #c72135;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App #pokedex #top-cover #left-top {
+  height: 100%;
+  width: 20%;
+  border-bottom: 0.5rem solid #e8e6e4;
+}
+
+.App #pokedex #top-cover #left-top #top-left-outer-border {
+  height: 65%;
+  width: 170%;
+  border-bottom-right-radius: 150px;
+  border-right: 0.5rem solid black;
+  border-bottom: 0.5rem solid black;
+}
+
+.App #pokedex #top-cover #left-top #top-left-outer-border #top-left-inner-border {
+  height: 50%;
+  width: 55%;
+  border-bottom-right-radius: 150px;
+  border-right: 0.5rem solid black;
+  border-bottom: 0.5rem solid black;
+}
+
+.App #pokedex #top-cover #mid-top {
+  height: 100%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App #pokedex #top-cover #mid-top #top-half-circle-border {
+  height: 60%;
+  width: 100%;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border-left: 0.5rem solid #e8e6e4;
+  border-top: 0.5rem solid #e8e6e4;
+  border-right: 0.5rem solid #e8e6e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App #pokedex #top-cover #mid-top #top-half-circle-border #top-half-circle {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  background: #b9d7d7;
+  border-left: 4rem solid #272725;
+  border-top: 4rem solid #272725;
+  border-right: 4rem solid #272725;
+}
+
+.App #pokedex #top-cover #right-top {
+  height: 100%;
+  width: 20%;
+  border-bottom: 0.5rem solid #e8e6e4;
+}
+
+.App #pokedex #screen {
+  height: 44%;
+  width: 100%;
+  background: #b9d7d7;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App #pokedex #screen form {
+  width: 85%;
+  margin: 3% 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.App #pokedex #screen form input {
+  background: #e8e6e4;
+  border: 0.1rem solid #c72135;
+}
+
+.App #pokedex #screen form button {
+  background: #c72135;
+  color: #e8e6e4;
+  border-radius: 5px;
+}
+
+.App #pokedex #bot-cover {
+  height: 28%;
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #c72135;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.App #pokedex #bot-cover #left-bot {
+  height: 100%;
+  width: 20%;
+  border-top: 0.5rem solid #e8e6e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App #pokedex #bot-cover #left-bot #bot-left-outer-border {
+  height: 65%;
+  width: 170%;
+  border-top-right-radius: 150px;
+  border-right: 0.5rem solid black;
+  border-top: 0.5rem solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.App #pokedex #bot-cover #left-bot #bot-left-outer-border #bot-left-inner-border {
+  height: 50%;
+  width: 55%;
+  border-top-right-radius: 150px;
+  border-right: 0.5rem solid black;
+  border-top: 0.5rem solid black;
+}
+
+.App #pokedex #bot-cover #mid-bot {
+  height: 100%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.App #pokedex #bot-cover #mid-bot #bot-half-circle-border {
+  height: 60%;
+  width: 100%;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  border-left: 0.5rem solid #e8e6e4;
+  border-bottom: 0.5rem solid #e8e6e4;
+  border-right: 0.5rem solid #e8e6e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.App #pokedex #bot-cover #mid-bot #bot-half-circle-border #bot-half-circle {
+  height: 100%;
+  width: 100%;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  background: #b9d7d7;
+  border-left: 4rem solid #272725;
+  border-bottom: 4rem solid #272725;
+  border-right: 4rem solid #272725;
+}
+
+.App #pokedex #bot-cover #right-bot {
+  height: 100%;
+  width: 20%;
+  border-top: 0.5rem solid #e8e6e4;
 }
 /*# sourceMappingURL=App.css.map */

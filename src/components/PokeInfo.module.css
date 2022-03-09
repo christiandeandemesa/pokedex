@@ -1,1 +1,145 @@
-/* No CSS *//*# sourceMappingURL=PokeInfo.module.css.map */
+#info {
+  width: 90%;
+  background: #2ba4ed;
+  color: #1c5fad;
+  font-weight: bold;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#info #top_info {
+  height: 35%;
+  width: 95%;
+  margin-top: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#info #top_info #img {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#info #top_info #img img {
+  height: auto;
+  width: 100%;
+}
+
+#info #top_info #right_info {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#info #top_info #right_info .small_section {
+  border-bottom: 0.25rem solid white;
+  font-size: 1rem;
+}
+
+#info #bot_info {
+  height: 65%;
+  width: 95%;
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#info #bot_info .large_section {
+  border-bottom: 0.25rem solid white;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#info #bot_info #moves {
+  width: 100%;
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#info #bot_info #moves #move_title {
+  font-size: 1.2rem;
+  margin-bottom: 1%;
+}
+
+#info #bot_info #moves #move_container {
+  width: 80%;
+}
+
+#info #bot_info #moves #move_container #top_move_container, #info #bot_info #moves #move_container #bot_move_container {
+  margin-bottom: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 2%;
+}
+
+#info #bot_info #moves #move_container #top_move_container p, #info #bot_info #moves #move_container #bot_move_container p {
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+
+#info #bot_info #moves #move_container #top_move_container p:hover, #info #bot_info #moves #move_container #bot_move_container p:hover {
+  background: #1c5fad;
+  color: #2ba4ed;
+  border: 2px solid white;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+/*# sourceMappingURL=PokeInfo.module.css.map */

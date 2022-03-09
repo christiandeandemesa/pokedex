@@ -73,7 +73,7 @@ function App() {
         If pokemon.types[1] exists in the API data, pass its data. If it does not exist, pass an empty string.
         Added this because some pokemon only have one ability, and it will break the PokeInfo component.
         */
-        type2={pokemon.types[1] ? pokemon.types[1].type.name : ''}
+        type2={pokemon.types[1] ? pokemon.types[1].type.name.charAt(0).toUpperCase() + pokemon.types[1].type.name.slice(1) : ''}
         height={pokemon.height}
         weight={pokemon.weight}
         hp={pokemon.stats[0].base_stat}
@@ -86,9 +86,9 @@ function App() {
         ability1={pokemon.abilities[0].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
         ability2={pokemon.abilities[1].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
         move1={pokemon.moves[0].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
-        move2={pokemon.moves[1].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
-        move3={pokemon.moves[2].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
-        move4={pokemon.moves[3].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        move2={pokemon.moves[1] ? pokemon.moves[1].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
+        move3={pokemon.moves[2] ? pokemon.moves[2].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
+        move4={pokemon.moves[3] ? pokemon.moves[3].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
       />
     )
   });

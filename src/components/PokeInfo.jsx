@@ -25,7 +25,7 @@ function PokeInfo(props) {
                     </div>
                     <div className={styles.small_section}>
                         {/* If type2 is an empty string, show an empty string. If it is not an empty string, show the value of type2. */}
-                        <p>Type: {type1} {type2 === '' ? '' : `Type 2: ${type2}`}</p>
+                        <p>Type: {type1} {type2 === '' ? '' : `${type2}`}</p>
                     </div>
                     {/* Example of a class for the CSS module. */}
                     <div className={styles.small_section}>
@@ -52,7 +52,6 @@ function PokeInfo(props) {
                     <p>Special Defense: {spDef}</p>
                 </div>
                 <div className={styles.large_section}>
-                    {/* If ability2 is an empty string, show an empty string. If it is not an empty string, show the value of ability2. */}
                     <p>Ability: {ability1} {ability2 === '' ? '' : `or ${ability2}`}</p>
                 </div>
                 <div id={styles.moves}>
@@ -60,11 +59,11 @@ function PokeInfo(props) {
                     <div id={styles.move_container}>
                         <div id={styles.top_move_container}>
                             <p>{move1}</p>
-                            <p>{move2}</p>
+                            <p>{move2 === '' ? 'N/A' : move2}</p>
                         </div>
                         <div id={styles.bot_move_container}>
-                            <p>{move3}</p>
-                            <p>{move4}</p>
+                            <p>{move3 === '' ? 'N/A' : move3}</p>
+                            <p>{move4 === '' ? 'N/A' : move4}</p>
                         </div>
                     </div>
                 </div>
