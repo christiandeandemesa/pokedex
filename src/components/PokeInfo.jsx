@@ -25,7 +25,7 @@ function PokeInfo(props) {
                     </div>
                     <div className={styles.small_section}>
                         {/* If type2 is an empty string, show an empty string. If it is not an empty string, show the value of type2. */}
-                        <p>Type: {type1} {type2 === '' ? '' : `${type2}`}</p>
+                        <p>Type: {type1} {type2 === '' ? '' : `and ${type2}`}</p>
                     </div>
                     {/* Example of a class for the CSS module. */}
                     <div className={styles.small_section}>

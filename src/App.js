@@ -84,7 +84,7 @@ function App() {
         spd={pokemon.stats[5].base_stat}
         // Converts some of the abilities' and moves' names to remove the hyphen and capitalize the words (e.g. hydro-pump becomes Hydro Pump).
         ability1={pokemon.abilities[0].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
-        ability2={pokemon.abilities[1].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
+        ability2={pokemon.abilities[1] ? pokemon.abilities[1].ability.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
         move1={pokemon.moves[0].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ')}
         move2={pokemon.moves[1] ? pokemon.moves[1].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
         move3={pokemon.moves[2] ? pokemon.moves[2].move.name.split('-').map(elem => elem[0].toUpperCase() + elem.slice(1)).join(' ') : ''}
