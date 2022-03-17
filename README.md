@@ -3,7 +3,7 @@ Looks up pokemon in the national pokedex. The backend was built with JavaScript,
 
 ## How to run this project
 1. Open your terminal and type: git clone https://github.com/christiandeandemesa/pokedex.git
-2. To download the dependencies, cd into the currency-calculator folder and type: npm install
+2. To download the dependencies, cd into the pokedex folder and type: npm install
 3. Run this project by typing: npm start
 
 ## Features
